@@ -37,9 +37,10 @@ app.use('/api/v1/payments' , paymentRouter);
 app.use('/api/v1/contact' , contactRouter);
 app.use('/api/v1/admin' , adminRouter); // to be replaced with admin routes
 
-app.all("*",(req,res)=>{
-    res.status(404).send("404\nPage not found");
+app.get("/", (req, res) => {
+  res.send("LMS Backend is running 🚀");
 });
+
 
 app.use(errorMiddleware);
 
